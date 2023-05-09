@@ -1,4 +1,5 @@
-function isUnique(str: string): boolean {
+// Using Set
+export function isUniqueSet(str: string): boolean {
   const visited = new Set<string>();
   for(const c of str) {
     if(visited.has(c)) {
@@ -11,7 +12,7 @@ function isUnique(str: string): boolean {
 
 
 // Using bit manipulation(works only for small case alphabets)
-function isUnique_bitwise(str: string): boolean {
+export function isUnique_bitwise(str: string): boolean {
   let checker: number = 0;
   for(const c of str) { 
     const val = c.charCodeAt(0) - 97;
@@ -22,5 +23,3 @@ function isUnique_bitwise(str: string): boolean {
   } 
   return true;
 }
-
-export default isUnique;
